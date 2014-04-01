@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[My Octopress Blog]]></title>
+  <title><![CDATA[Fresh and Blood]]></title>
   <link href="http://ozryo.github.io/atom.xml" rel="self"/>
   <link href="http://ozryo.github.io/"/>
-  <updated>2014-04-01T21:43:41+09:00</updated>
+  <updated>2014-04-01T22:10:55+09:00</updated>
   <id>http://ozryo.github.io/</id>
   <author>
-    <name><![CDATA[Your Name]]></name>
+    <name><![CDATA[r-ehara]]></name>
     
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
