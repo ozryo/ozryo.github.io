@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[My Octopress Blog]]></title>
+  <link href="http://ozryo.github.io/atom.xml" rel="self"/>
+  <link href="http://ozryo.github.io/"/>
+  <updated>2014-04-01T16:31:57+09:00</updated>
+  <id>http://ozryo.github.io/</id>
+  <author>
+    <name><![CDATA[Your Name]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA['It should become a flesh and blood']]></title>
+    <link href="http://ozryo.github.io/blog/2014/04/01/it-should-become-a-flesh-and-blood/"/>
+    <updated>2014-04-01T16:29:20+09:00</updated>
+    <id>http://ozryo.github.io/blog/2014/04/01/it-should-become-a-flesh-and-blood</id>
+    <content type="html"><![CDATA[
+]]></content>
+  </entry>
+  
+</feed>
