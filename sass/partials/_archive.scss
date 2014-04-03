@@ -3,9 +3,9 @@
 }
 #blog-archives {
   article {
-    border-bottom: 1px solid $text-color-light;
     padding: 1em 0 1em;
     position: relative;
+    background: $img-border bottom left repeat-x;
     &:last-child {
       background: none;
     }
@@ -13,21 +13,16 @@
   }
   h2 { display: none; }
   h1 {
+    color: $white;
+    margin-bottom: .3em;
+    font-size: 1.2em;
     a {
-      &, &:focus, &:active, &:visited {
-        color: inherit;
-      }
+      @include hover-link;
+      color: inherit;
       &:hover { color: $link-color-hover; }
       font-weight: normal;
       display: inline-block;
     }
-    color: $text-color;
-    font-size: 1.5em;
-    margin-bottom: .3em;
-    text-align: left;
-  }
-  footer {
-    text-align: left;
   }
   a.category, time {
     @extend .sans;
@@ -36,14 +31,13 @@
   color: $text-color-light;
   .entry-content { display: none; }
   time {
-    display: block;
     font-size: .9em;
     line-height: 1.2em;
-    text-align: left;
     .month, .day { display: inline-block; }
     .month { text-transform: uppercase; }
   }
   p { margin-bottom: 1em; }
+  &, .entry-content { a { @include link-colors(inherit, $link-color-hover); }}
   a:hover { color: $link-color-hover; }
   @media only screen and (min-width: 550px) {
     article { margin-left: 5em; }
@@ -53,20 +47,27 @@
       display: inline-block;
       position: relative; top: -1px;
       float: left;
-      &:first-child { padding-top: .75em; }
+      color: $white;
+      padding-top: .75em;
     }
     time {
       position: absolute;
       text-align: right;
       left: 0em;
-      top: 2.5em;
+      top: 1.8em;
+      color: $white;
     }
     .year { display: none; }
     article {
       padding:{left: 4.5em; bottom: .7em;}
     }
-  a.category {
-    line-height: 1.1em;
+    a.category {
+      line-height: 1.1em;
+      color: $yellow;
+      padding: 5px;
+      &:hover {
+        color: $darkBrick;
+      }
     }
   }
 }
