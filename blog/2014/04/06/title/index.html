@@ -1,0 +1,193 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>UML_クラス図 - Fresh and Blood</title>
+  <meta name="author" content="r-ehara">
+
+  
+  <meta name="description" content="UMLの勉強その１ UMLとはシステムをモデル化するための言語 UMLにはクラス図、シーケンス図、ユースケース図、などなど まず、クラス図 ・関連・・・修飾されることによって具体的な意味になる ・依存・・・一時的な結びつき。例えば会社クラスと部門クラスと社員クラスがあった場合、 &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://ozryo.github.io/blog/2014/04/06/title/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="Fresh and Blood" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,400italic' rel='stylesheet' type='text/css'>
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <img src="/images/ah_frame_transparent.svg" />
+  <h1><a href="/">Fresh and Blood</a></h1>
+</hgroup>
+
+</header>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">UML_クラス図</h1>
+    
+  </header>
+
+
+
+
+
+<div class="entry-content"><p>UMLの勉強その１</p>
+
+<!--more-->
+
+
+<p>UMLとはシステムをモデル化するための言語</p>
+
+<p>UMLにはクラス図、シーケンス図、ユースケース図、などなど</p>
+
+<p>まず、クラス図</p>
+
+<p>・関連・・・修飾されることによって具体的な意味になる</p>
+
+<p>・依存・・・一時的な結びつき。例えば会社クラスと部門クラスと社員クラスがあった場合、会社クラスと社員クラスは依存関係。つまり、必要な場合に会社クラスのcreateメソッドなどで社員クラスを生成する。
+また、ローカル変数で使用したり、メソッドの引数、戻り値などで使われる場合。</p>
+
+<p>・汎化・・・継承関係</p>
+
+<p>・洗練・・・インターフェイスの実装（implements）</p>
+
+<p><img src="/images/rel-exp.gif" alt="rel-exp" /></p>
+
+<p>関連の種類</p>
+
+<p><img src="/images/assoc-exp.gif" alt="assoc-exp" /></p>
+
+<p>集約に関しては、菱形側がもう片側を所有している。菱形が黒く塗りつぶされている場合は、強い関連を示し、コンポジションと呼ばれる。菱形側が消滅したら片方も消滅してしまう場合である。つまり、見出しと明細の関係だ。</p>
+
+<p>矢印がついた関連の場合、矢印の方向にのみ辿れる（参照している）。例えば、あるサービスやＢＯクラスからＤＡＯを使用している場合など。</p>
+
+<p>集約と依存の違いがわかりずらいが、依存は一時的な結びつきというところが重要</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">r-ehara</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-04-06T20:37:04+09:00" pubdate data-updated="true">Apr 6<span>th</span>, 2014</time>
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://ozryo.github.io/blog/2014/04/06/title/" data-via="" data-counturl="http://ozryo.github.io/blog/2014/04/06/title/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2014/04/01/it-should-become-a-flesh-and-blood/" title="Previous Post: Octopressのめも">&laquo; Octopressのめも</a>
+      
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2014/04/06/title/">UML_クラス図</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/04/01/it-should-become-a-flesh-and-blood/">Octopressのめも</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2014 - r-ehara -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+<script src="/javascripts/aharris.js"></script>
+
+</body>
+</html>

@@ -3,7 +3,7 @@
   <title><![CDATA[Fresh and Blood]]></title>
   <link href="http://ozryo.github.io/atom.xml" rel="self"/>
   <link href="http://ozryo.github.io/"/>
-  <updated>2014-04-03T23:22:34+09:00</updated>
+  <updated>2014-04-09T12:52:46+09:00</updated>
   <id>http://ozryo.github.io/</id>
   <author>
     <name><![CDATA[r-ehara]]></name>
@@ -11,6 +11,45 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[UML_クラス図]]></title>
+    <link href="http://ozryo.github.io/blog/2014/04/06/title/"/>
+    <updated>2014-04-06T20:37:04+09:00</updated>
+    <id>http://ozryo.github.io/blog/2014/04/06/title</id>
+    <content type="html"><![CDATA[<p>UMLの勉強その１</p>
+
+<!--more-->
+
+
+<p>UMLとはシステムをモデル化するための言語</p>
+
+<p>UMLにはクラス図、シーケンス図、ユースケース図、などなど</p>
+
+<p>まず、クラス図</p>
+
+<p>・関連・・・修飾されることによって具体的な意味になる</p>
+
+<p>・依存・・・一時的な結びつき。例えば会社クラスと部門クラスと社員クラスがあった場合、会社クラスと社員クラスは依存関係。つまり、必要な場合に会社クラスのcreateメソッドなどで社員クラスを生成する。
+また、ローカル変数で使用したり、メソッドの引数、戻り値などで使われる場合。</p>
+
+<p>・汎化・・・継承関係</p>
+
+<p>・洗練・・・インターフェイスの実装（implements）</p>
+
+<p><img src="http://ozryo.github.io/images/rel-exp.gif" alt="rel-exp" /></p>
+
+<p>関連の種類</p>
+
+<p><img src="http://ozryo.github.io/images/assoc-exp.gif" alt="assoc-exp" /></p>
+
+<p>集約に関しては、菱形側がもう片側を所有している。菱形が黒く塗りつぶされている場合は、強い関連を示し、コンポジションと呼ばれる。菱形側が消滅したら片方も消滅してしまう場合である。つまり、見出しと明細の関係だ。</p>
+
+<p>矢印がついた関連の場合、矢印の方向にのみ辿れる（参照している）。例えば、あるサービスやＢＯクラスからＤＡＯを使用している場合など。</p>
+
+<p>集約と依存の違いがわかりずらいが、依存は一時的な結びつきというところが重要</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Octopressのめも]]></title>
