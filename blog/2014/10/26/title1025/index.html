@@ -1,0 +1,268 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>正規化 - Fresh and Blood</title>
+  <meta name="author" content="r-ehara">
+
+  
+  <meta name="description" content="正規化のまとめ 第１正規形：重複をなくす。イメージだと、エクセルの１つのセルのなかにむりやり２つのデータを入れているデータを排除。➡横持ちにしたり縦持ちにしたりする。 A01|Tanaka|Kaori|Atom| A01|Tanaka|Kaori
+A01|Tanaka|Atom 第２正規形：まず、 &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://ozryo.github.io/blog/2014/10/26/title1025/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="Fresh and Blood" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,400italic' rel='stylesheet' type='text/css'>
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <img src="/images/ah_frame_transparent.svg" />
+  <h1><a href="/">Fresh and Blood</a></h1>
+</hgroup>
+
+</header>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">正規化</h1>
+    
+  </header>
+
+
+
+
+
+<div class="entry-content"><p>正規化のまとめ</p>
+
+<!--more-->
+
+
+<p>第１正規形：重複をなくす。イメージだと、エクセルの１つのセルのなかにむりやり２つのデータを入れているデータを排除。➡横持ちにしたり縦持ちにしたりする。</p>
+
+<hr />
+
+<p>A01|Tanaka|Kaori|Atom|</p>
+
+<p>A01|Tanaka|Kaori
+A01|Tanaka|Atom</p>
+
+<p>第２正規形：まず、関数従属性についての整理。
+[A] ➡　[B] ➡　AならばBである。
+完全関数従属のみのテーブルにすることが第２正規化となる。</p>
+
+<p>&mdash;
+001|NTT|A01|Tanaka|</p>
+
+<p>上記は会社コードと社員コードがKeyである。
+社員名は、会社コードと社員コードによって決まる。つまり完全関数従属がある。</p>
+
+<h2>会社名は、会社コードによって決まる。つまり、完全関数従属がない。（部分関数従属）</h2>
+
+<p>001|A01|Tanaka</p>
+
+<p>001|NTT</p>
+
+<p>第２正規化のメリットは以下
+上記例でいうと会社と社員の情報を分けることが出来たので、社員情報がない場合でも会社を登録することができる。
+また、会社コードと社員コードでＫｅｙになっていたので、同じ会社コードで違う会社名を登録することを防げる。
+テーブル分割のメリットは更新異常を防げる。</p>
+
+<p>第３正規化について</p>
+
+<h2>推移的関数従属をなくす。</h2>
+
+<p>001|A01|Tanaka|AAA|Kaihatu</p>
+
+<p>{001,A01} ➡ {AAA}　➡ [Kaihatu]</p>
+
+<p>会社コードと社員コードにより部署コードがきまる。部署コードから部署名がきまる。
+これが推移的関数従属である。
+例えば、新設のまだ社員が存在しない部署を登録することができない。
+以下、正規化後</p>
+
+<p>&mdash;
+001|A01|Tanaka|AAA
+AAA|Kaihatu</p>
+
+<h2>ボイスーコッド正規化について</h2>
+
+<p>社員ID,チームコード,チーム補佐</p>
+
+<p>000A|001|123w
+000B|001|456Z
+000B|002|0030
+001F|001|123w
+001F|002|0030</p>
+
+<p>key:社員ID,チームコード</p>
+
+<p>上記のテーブルには部分関数従属も推移的関数従属も存在しない。つまり、第３正規化されたテーブルといえる。
+だがしかし、ボイスーコッド正規化ではない。
+なざなら上記テーブルは、{チーム補佐} ➡ [チームコード] が成り立ちそうだから。
+非キーからキー項目への関数従属をなくした状態がボイス-コッド正規化なのである。</p>
+
+<p>ボイスーコッド正規化でないと起こりえる問題とは？
+上記例だと、チーム補佐がチームコードを変える場合、複数レコードを更新しないといけない。
+チームに人が所属しない限り、レコードを登録できない。</p>
+
+<h2>今までの正規化の手順に習うと、チーム補佐をkeyにしたテーブルを切り出すように思える。</h2>
+
+<p>00A|001
+00B|001
+00B|002</p>
+
+<p>123w|001
+456Z|001
+0030|002</p>
+
+<p>これだと、元のテーブルにもどせない。非可逆である。
+正規化は基本１対多にすることをいう。上記は多対多</p>
+
+<p>000A|123w
+000B|456Z
+000B|0030
+001F|123w
+001F|0030</p>
+
+<p>123w|001
+456Z|001
+0030|002</p>
+
+<p>これにすれば、１対多が成立するのでよいはず。
+ただし、上記でも問題が発生する。
+例えば、000A|0030を登録することが可能。
+そうすると、000Aは001と002の両方のチームの補佐を受けることになる。
+社員とチームの関係を正規化によってくずしたために発生する。</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">r-ehara</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-10-26T18:20:29+09:00" pubdate data-updated="true">Oct 26<span>th</span>, 2014</time>
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://ozryo.github.io/blog/2014/10/26/title1025/" data-via="" data-counturl="http://ozryo.github.io/blog/2014/10/26/title1025/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2014/04/06/title/" title="Previous Post: UML_クラス図">&laquo; UML_クラス図</a>
+      
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2014/10/26/title1025/">正規化</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/04/06/title/">UML_クラス図</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/04/01/it-should-become-a-flesh-and-blood/">Octopressのめも</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2014 - r-ehara -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+<script src="/javascripts/aharris.js"></script>
+
+</body>
+</html>
