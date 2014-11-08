@@ -3,7 +3,7 @@
   <title><![CDATA[Fresh and Blood]]></title>
   <link href="http://ozryo.github.io/atom.xml" rel="self"/>
   <link href="http://ozryo.github.io/"/>
-  <updated>2014-11-03T16:47:57+09:00</updated>
+  <updated>2014-11-08T17:45:40+09:00</updated>
   <id>http://ozryo.github.io/</id>
   <author>
     <name><![CDATA[r-ehara]]></name>
@@ -22,11 +22,10 @@
 <!--more-->
 
 
-<p>第１正規形：重複をなくす。イメージだと、エクセルの１つのセルのなかにむりやり２つのデータを入れているデータを排除。➡横持ちにしたり縦持ちにしたりする。</p>
-
-<hr />
-
-<p>A01|Tanaka|Kaori|Atom|</p>
+<p>第１正規形：重複をなくす。イメージだと、エクセルの１つのセルのなかにむりやり２つのデータを入れているデータを排除。➡横持ちにしたり縦持ちにしたりする。
+社員コード|氏名|配偶者1|配偶者2|
+:&mdash;&mdash;&mdash;&ndash;|:&mdash;&mdash;&ndash;|:&mdash;&mdash;|:&mdash;&mdash;&mdash;|
+A01     |Tanaka|Kaori|Atom   |</p>
 
 <p>A01|Tanaka|Kaori
 A01|Tanaka|Atom</p>
